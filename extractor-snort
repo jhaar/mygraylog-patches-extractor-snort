@@ -1,0 +1,89 @@
+{
+    "extractors": [
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\] (.*) \\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 15,
+            "source_field": "message",
+            "target_field": "snort_message",
+            "title": "Snort Message"
+        },
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:(.+)\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 16,
+            "source_field": "message",
+            "target_field": "snort_classification",
+            "title": "Snort Classification"
+        },
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s(\\d)\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 17,
+            "source_field": "message",
+            "target_field": "snort_priority",
+            "title": "Snort Priority"
+        },
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{(\\S+)\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 18,
+            "source_field": "message",
+            "target_field": "snort_protocol",
+            "title": "Snort Protocol"
+        },
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s(\\S+):\\d+\\s->\\s\\S+:\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 19,
+            "source_field": "message",
+            "target_field": "src_ip",
+            "title": "Snort Source IP"
+        },
+        {
+            "condition_type": "regex",
+            "condition_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s\\S+:\\d+",
+            "converters": [],
+            "cursor_strategy": "copy",
+            "extractor_config": {
+                "regex_value": "\\[\\d+:\\d+:\\d\\].*\\[Classification:.+\\]\\s\\[Priority:\\s\\d\\].*\\{\\S+\\}\\s\\S+:\\d+\\s->\\s(\\S+):\\d+"
+            },
+            "extractor_type": "regex",
+            "order": 19,
+            "source_field": "message",
+            "target_field": "dst_ip",
+            "title": "Snort Destination IP"
+        }
+    ],
+    "version": "0.20.3.jlh"
+}
